@@ -13,8 +13,6 @@ build:
   ignore_prefix_files: True
   binary_relocation: False
   skip: True  # [win]
-  missing_dso_whitelist:
-    - '*'
 
 requirements:
   build:
@@ -26,6 +24,8 @@ requirements:
     - openjdk >=8
 
 test:
+  requires:
+    - openjdk >=8
   commands:
     - bazel --version
 
