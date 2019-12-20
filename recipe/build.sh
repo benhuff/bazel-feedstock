@@ -2,5 +2,5 @@
 
 set -v -x
 sh compile.sh
-chmod +x output/bazel
 mv output/bazel $PREFIX/bin
+chmod +x $PREFIX/bin/bazel
