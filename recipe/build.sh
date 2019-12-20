@@ -2,10 +2,5 @@
 
 set -v -x
 sh compile.sh
-
-for entry in "output"/*
-do
-  echo "$entry"
-done
-
+chmod +x output/bazel
 mv output/bazel $PREFIX/bin
