@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    OTHER_LDFLAGS = "-Xlinker -U -Xlinker _objc_readClassPair"
+    xcodebuild "OTHER_LDFLAGS=-Xlinker -U -Xlinker _objc_readClassPair"
     set -v -x
     sh compile.sh
     mv ${BAZEL} $PREFIX/bin
