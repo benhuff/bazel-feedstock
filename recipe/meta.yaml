@@ -14,13 +14,14 @@ build:
   binary_relocation: False
   skip: True  # [win]
   missing_dso_whitelist:
-    - '*'  # [osx]
+    - '*'
 
 requirements:
   build:
+    - {{ compiler('cxx') }}
     - openjdk >=8,<11
-    - unzip  # [unix]
-    - zip    # [unix]
+    - unzip
+    - zip
   run:
     - openjdk >=8
 
