@@ -2,9 +2,10 @@
 
 set -v -x
 sh compile.sh
-mv output/bazel $PREFIX/bin
 
-for entry in "$PREFIX/bin"/*
+for entry in "output"/*
 do
   echo "$entry"
 done
+
+mv output/bazel $PREFIX/bin
