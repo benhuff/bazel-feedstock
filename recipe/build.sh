@@ -3,9 +3,9 @@
 if [[ "$OSTYPE" == "darwin"* ]]; then
     set -v -x
     sh compile.sh
-    mv ${BAZEL} $PREFIX/bin
+    mv output/bazel $PREFIX/bin
 else
     set -v -x
     sh compile.sh
-    mv ${BAZEL} $PREFIX/bin
+    mv output/bazel $PREFIX/bin
 fi
