@@ -19,13 +19,15 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - openjdk >=8,<11
+    - openjdk >=8
     - unzip
     - zip
   run:
     - openjdk >=8
 
 test:
+  requires:
+    - openjdk >=8
   commands:
     - bazel -h
 
