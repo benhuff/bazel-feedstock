@@ -26,10 +26,8 @@ requirements:
     - openjdk >=8
 
 test:
-  requires:
-    - openjdk >=8
   commands:
-    - bazel --version
+    - bazel -h
 
 about:
   home: https://www.bazel.io/

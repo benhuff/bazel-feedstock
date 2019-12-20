@@ -1,14 +1,12 @@
 #!/bin/bash
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    set OTHER_LDFLAGS = "-Xlinker -U -Xlinker _objc_readClassPair"
+    OTHER_LDFLAGS = "-Xlinker -U -Xlinker _objc_readClassPair"
     set -v -x
     sh compile.sh
-    mv output/bazel $PREFIX/bin
+    mv ${BAZEL} $PREFIX/bin
 else
     set -v -x
     sh compile.sh
-    mv output/bazel $PREFIX/bin
-    cd $PREFIX/bin
-    echo ls
+    mv ${BAZEL} $PREFIX/bin
 fi
