@@ -1,0 +1,13 @@
+diff --git a/compile.sh b/compile.sh
+index d91583d277..f5aaf516ba 100755
+--- a/compile.sh
++++ b/compile.sh
+@@ -54,6 +54,8 @@ fi
+ if [[ $PLATFORM == "darwin" ]] && \
+     xcodebuild -showsdks 2> /dev/null | grep -q '\-sdk iphonesimulator'; then
+   EXTRA_BAZEL_ARGS="${EXTRA_BAZEL_ARGS-} --define IPHONE_SDK=1"
++elif [[ $PLATFORM == "darwin" ]]; then
++  OTHER_LDFLAGS="${OTHER_LDFLAGS-} -Xlinker -U -Xlinker _objc_readClassPair"
+ fi
+ 
+ source scripts/bootstrap/bootstrap.sh
