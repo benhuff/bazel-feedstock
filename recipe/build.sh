@@ -3,7 +3,7 @@
 set -v -x
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    set CMAKE_OSX_DEPLOYMENT_TARGET = '10.10'
+    set CMAKE_OSX_DEPLOYMENT_TARGET = '10.12'
     ./compile.sh
     mkdir -p $PREFIX/bin/
     mv output/bazel $PREFIX/bin
