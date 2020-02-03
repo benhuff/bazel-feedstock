@@ -27,7 +27,7 @@ requirements:
 
 test:
   commands:
-    - bazel info
+    - bazel -h
 
 about:
   home: https://www.bazel.io/
