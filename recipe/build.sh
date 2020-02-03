@@ -10,5 +10,5 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     mv output/bazel $PREFIX/bin
 else
     ./compile.sh
-    mv output/bazel $PREFIX/bin
+#    mv output/bazel $PREFIX/bin
 fi
