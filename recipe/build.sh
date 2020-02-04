@@ -3,10 +3,16 @@
 set -v -x
 
 if [ $(uname) == Darwin ]; then
-    # Darwin has only clang, must use clang++ from clangdev
-    # All these must be picked up from $PREFIX/bin
-    export CC=x86_64-apple-darwin14.0.0-clang
-    export CXX=x86_64-apple-darwin14.0.0-clang++
+    if [[ $(basename $CONDA_BUILD_SYSROOT) != "MacOSX10.12.sdk" ]]; then
+      echo "WARNING: You asked me to use $CONDA_BUILD_SYSROOT as the MacOS SDK"
+      echo "         But because of the use of Objective-C Generics we need at"
+      echo "         least MacOSX10.12.sdk"
+      CONDA_BUILD_SYSROOT=/opt/MacOSX10.12.sdk
+      if [[ ! -d $CONDA_BUILD_SYSROOT ]]; then
+        echo "ERROR: $CONDA_BUILD_SYSROOT is not a directory"
+        exit 1
+      fi
+    fi
     ./compile.sh
     mkdir -p $PREFIX/bin/
     mv output/bazel $PREFIX/bin
