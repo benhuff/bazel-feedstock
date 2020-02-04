@@ -14,4 +14,4 @@ else
     ./compile.sh
     mkdir -p $PREFIX/bin/
     mv output/bazel $PREFIX/bin
-
+fi
