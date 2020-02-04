@@ -20,7 +20,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - llvm >=6.1  # [osx]
+    - llvm >=6.2  # [osx]
     - openjdk >=8
     - unzip
     - zip
